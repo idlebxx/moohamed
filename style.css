@@ -667,3 +667,205 @@ footer {
         top: 130px;
     }
   }
+/* ========== إضافات المميزات الجديدة ========== */
+
+/* شاشة التحميل Loading Screen */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loader {
+    text-align: center;
+}
+
+.cyber-circle, .cyber-circle2 {
+    width: 80px;
+    height: 80px;
+    border: 3px solid #00ffff;
+    border-top: 3px solid #ff00ff;
+    border-radius: 50%;
+    display: inline-block;
+    animation: spin 1s linear infinite;
+    margin: 0 10px;
+}
+
+.cyber-circle2 {
+    width: 60px;
+    height: 60px;
+    border: 3px solid #ff00ff;
+    border-top: 3px solid #00ffff;
+    animation: spin-reverse 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.loader-text {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #00ffff;
+    font-weight: bold;
+}
+
+.loader-dots::after {
+    content: '';
+    animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: ''; }
+    40% { content: '.'; }
+    60% { content: '..'; }
+    80%, 100% { content: '...'; }
+}
+
+.loader-sub {
+    color: #ff00ff;
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+
+/* تأثير هولوجرام على الصورة */
+.hologram-effect {
+    position: relative;
+    animation: hologramPulse 2s ease-in-out infinite;
+}
+
+.hologram-effect::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #00ffff, #ff00ff, #00ffff);
+    opacity: 0;
+    z-index: -1;
+    animation: hologramBorder 2s ease-in-out infinite;
+}
+
+@keyframes hologramPulse {
+    0%, 100% { filter: drop-shadow(0 0 5px #00ffff); }
+    50% { filter: drop-shadow(0 0 20px #ff00ff); }
+}
+
+@keyframes hologramBorder {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.hologram-effect-small {
+    position: relative;
+}
+
+.hologram-effect-small::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #00ffff, #ff00ff);
+    opacity: 0;
+    z-index: -1;
+    animation: hologramBorderSmall 2s ease-in-out infinite;
+}
+
+@keyframes hologramBorderSmall {
+    0%, 100% { opacity: 0.2; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.08); }
+}
+
+/* قسم GitHub */
+.github-section {
+    background: linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2));
+}
+
+.github-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.github-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--neon-blue);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: 0.3s;
+}
+
+.github-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+.github-card h3 {
+    color: var(--neon-blue);
+    margin-bottom: 0.5rem;
+}
+
+.github-card p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin: 0.5rem 0;
+}
+
+.github-stars {
+    color: #ffd700;
+    font-size: 0.8rem;
+}
+
+.github-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: var(--neon-blue);
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.github-loading {
+    text-align: center;
+    color: var(--neon-blue);
+    padding: 2rem;
+}
+
+/* إشعار تيلجرام */
+.telegram-notify {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #00ffff;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
