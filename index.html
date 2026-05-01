@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>IDLEB X | محمد - مبرمج ومهندس أمن سيبراني احترافي</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- مكتبة QR Code -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <!-- مكتبة AOS للتمرير -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+
+    <!-- زر تبديل الوضع المظلم/المضيء -->
+    <button class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- زر تبديل اللغة -->
+    <button class="lang-toggle" id="langToggle">
+        <i class="fas fa-globe"></i> EN
+    </button>
+
+    <!-- قائمة التنقل -->
+    <nav>
+        <div class="logo" data-lang="logo">IDLEB<span>X</span></div>
+        <div class="nav-links">
+            <a href="#home" data-lang="nav-home">الرئيسية</a>
+            <a href="#about" data-lang="nav-about">عني</a>
+            <a href="#skills" data-lang="nav-skills">مهاراتي</a>
+            <a href="#projects" data-lang="nav-projects">مشاريعي</a>
+            <a href="#penetration" data-lang="nav-pen">اختبار الاختراق</a>
+            <a href="#contact" data-lang="nav-contact">تواصل</a>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- قسم الترحيب الرئيسي -->
+    <section id="home" class="hero">
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+            <div class="profile-image-container">
+                <img src="profile.jpg" alt="IDLEB X" class="profile-image" id="heroProfileImg">
+            </div>
+            <div class="glitch-text" data-text="IDLEB X">IDLEB X</div>
+            <h1 data-lang="name">محمد <span>IDLEB X</span></h1>
+            <p class="typing-text" id="typingElement"></p>
+            <div class="hero-buttons">
+                <button id="downloadPDF" class="btn-primary">
+                    <i class="fas fa-file-pdf"></i> <span data-lang="download-cv">تحميل السيرة الذاتية PDF</span>
+                </button>
+                <a href="#contact" class="btn-secondary"><span data-lang="contact-me">تواصل معي</span></a>
+            </div>
+            <div class="social-icons">
+                <a href="https://facebook.com/adlepx" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://youtube.com/@abnadlep" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://instagram.com/xlb_me" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://t.me/idlex" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+                <a href="https://wa.me/963969061988" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم عني مع بطاقة 3D -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up" data-lang="about-title">من أنا؟</h2>
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <div class="profile-image-container about-profile">
+                        <img src="profile.jpg" alt="IDLEB X" class="profile-image">
+                    </div>
+                    <p><strong data-lang="about-name">أنا محمد، البالغ من العمر 19 عامًا، والمعروف في الأوساط التقنية بـ IDLEB X.</strong></p>
+                    <p data-lang="about-desc1">مبرمج تطبيقات ومواقع ويب، ومطور بوتات تلجرام احترافية، ومهندس أدوات اختراق أخلاقي.</p>
+                    <p data-lang="about-desc2">على الرغم من عمري الصغير، أمتلك العديد من المشاريع الحقيقية التي أثبت فيها قدرتي على بناء حلول رقمية متكاملة: من تطبيقات الهواتف والمواقع الديناميكية، إلى بوتات تلجرام تخدم آلاف المستخدمين بأتمتة ذكية، وصولًا إلى أدوات الأمن السيبراني المصممة لتعزيز الحماية.</p>
+                </div>
+                <div class="card-3d" data-aos="flip-left" data-aos-duration="1200">
+                    <div class="card-3d-inner">
+                        <div class="card-3d-front">
+                            <i class="fas fa-user-secret"></i>
+                            <h3>IDLEB X</h3>
+                            <p>محمد | 19 سنة</p>
+                        </div>
+                        <div class="card-3d-back">
+                            <i class="fas fa-code"></i>
+                            <h3>مهاراتي</h3>
+                            <p>Python | JavaScript | Flutter</p>
+                            <p>Cybersecurity | Telegram API</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-stats" data-aos="fade-up">
+                <div class="stat">
+                    <span class="stat-number" id="statProjects">0</span>
+                    <span class="stat-label" data-lang="stat-projects">مشروع</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="statYears">0</span>
+                    <span class="stat-label" data-lang="stat-years">سنوات خبرة</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="statClients">0</span>
+                    <span class="stat-label" data-lang="stat-clients">عميل</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المهارات -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up" data-lang="skills-title">مهاراتي الاحترافية</h2>
+            <div class="skills-grid">
+                <div class="skill-card" data-aos="zoom-in">
+                    <div class="profile-image-small">
+                        <img src="profile.jpg" alt="IDLEB X">
+                    </div>
+                    <i class="fas fa-code"></i>
+                    <h3 data-lang="skill1-title">تطوير تطبيقات ومواقع</h3>
+                    <p>Flutter, React, Laravel, Node.js</p>
+                </div>
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="profile-image-small">
+                        <img src="profile.jpg" alt="IDLEB X">
+                    </div>
+                    <i class="fab fa-telegram"></i>
+                    <h3 data-lang="skill2-title">بوتات تلجرام</h3>
+                    <p>Python, Telebot, Aiogram, APIs</p>
+                </div>
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="profile-image-small">
+                        <img src="profile.jpg" alt="IDLEB X">
+                    </div>
+                    <i class="fas fa-shield-alt"></i>
+                    <h3 data-lang="skill3-title">أدوات اختراق أخلاقي</h3>
+                    <p>Python, Kali Linux, Metasploit</p>
+                </div>
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="profile-image-small">
+                        <img src="profile.jpg" alt="IDLEB X">
+                    </div>
+                    <i class="fas fa-database"></i>
+                    <h3 data-lang="skill4-title">قواعد بيانات</h3>
+                    <p>MySQL, MongoDB, Firebase</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المشاريع -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up" data-lang="projects-title">أبرز مشاريعي</h2>
+            <div class="projects-grid">
+                <div class="project-card" data-aos="fade-up">
+                    <div class="profile-image-mini">
+                        <img src="profile.jpg" alt="IDLEB X">
+                    </div>
+                    <h3>🚀 نظام إدارة مكاتب متكامل</h3>
+                    <p>منصة ويب لإدارة الشركات والمكاتب مع لوحة تحكم ذكية</p>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="profile-image-mini">
+                        <img src="profile.jpg" alt="IDLEB X">
+                    </div>
+                    <h3>🤖 بوت بيع تلقائي لتلجرام</h3>
+                    <p>بوت يدير عمليات البيع والدفع والتحزيم بشكل أوتوماتيكي</p>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="profile-image-mini">
+                        <img src="profile.jpg" alt="IDLEB X">
+                    </div>
+                    <h3>🔐 أداة فحص ثغرات أخلاقية</h3>
+                    <p>أداة Python لفحص الثغرات الأمنية في المواقع بإطار قانوني</p>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="profile-image-mini">
+                        <img src="profile.jpg" alt="IDLEB X">
+                    </div>
+                    <h3>📱 تطبيق إدارة المهام</h3>
+                    <p>تطبيق موبايل متعدد المنصات لإدارة المهام والإنتاجية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم اختبار الاختراق التجريبي الاحترافي -->
+    <section id="penetration" class="penetration">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up" data-lang="pen-title">🧪 مختبر اختبار الاختراق التجريبي</h2>
+            <div class="pen-content" data-aos="fade-up">
+                <div class="profile-image-container pen-profile">
+                    <img src="profile.jpg" alt="IDLEB X" class="profile-image">
+                </div>
+                <p class="pen-intro" data-lang="pen-intro">هذا بيئة محاكاة احترافية لاختبار الاختراق الأخلاقي. جميع الأدوات والاختبارات آمنة وقانونية للعرض فقط.</p>
+                
+                <div class="pen-tools">
+                    <div class="pen-tool-card" onclick="simulateScan()">
+                        <i class="fas fa-search"></i>
+                        <h3 data-lang="pen-scan">مسح الثغرات</h3>
+                        <p>Nmap Style Scan</p>
+                    </div>
+                    <div class="pen-tool-card" onclick="simulateExploit()">
+                        <i class="fas fa-bug"></i>
+                        <h3 data-lang="pen-exploit">اختبار الاختراق</h3>
+                        <p>Metasploit Sim</p>
+                    </div>
+                    <div class="pen-tool-card" onclick="simulateCrack()">
+                        <i class="fas fa-key"></i>
+                        <h3 data-lang="pen-crack">اختبار كلمات المرور</h3>
+                        <p>Brute Force Sim</p>
+                    </div>
+                    <div class="pen-tool-card" onclick="simulateNetwork()">
+                        <i class="fas fa-network-wired"></i>
+                        <h3 data-lang="pen-network">تحليل الشبكة</h3>
+                        <p>Wireshark Style</p>
+                    </div>
+                </div>
+
+                <div class="pen-terminal" id="penTerminal">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-title">IDLEB X - Penetration Test Terminal</span>
+                    </div>
+                    <div class="terminal-body" id="terminalBody">
+                        <p class="terminal-line">$ IDLEB X Security Suite v3.7 initialized</p>
+                        <p class="terminal-line">$ Ready for ethical hacking simulation</p>
+                        <p class="terminal-line">$ اختر أداة من الأعلى لبدء الاختبار</p>
+                    </div>
+                </div>
+
+                <div class="qr-section">
+                    <h3 data-lang="qr-title">رابط بوت التلجرام للاختبارات الأمنية</h3>
+                    <div id="qrcode"></div>
+                    <p data-lang="qr-desc">امسح الكود لفتح بوت الاختبارات الأمنية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التواصل مع خريطة -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up" data-lang="contact-title">تواصل معي</h2>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="profile-image-container contact-profile">
+                        <img src="profile.jpg" alt="IDLEB X" class="profile-image">
+                    </div>
+                    <h3>محمد "IDLEB X"</h3>
+                    <p data-lang="contact-ready">جاهز للعمل الآن - لا تتردد بالتواصل</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fab fa-telegram-plane"></i>
+                            <span>t.me/idlex</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>+963 XX XXX XXXX</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>idlex@example.com</span>
+                        </div>
+                    </div>
+                    <div class="social-links-footer">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="contact-map" data-aos="fade-left">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52870.84345625404!2d36.700000!3d34.000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDAwJzAwLjAiTiAzNsKwNDInMDAuMCJF!5e0!3m2!1sar!2s!4v1700000000000!5m2!1sar!2s" width="100%" height="250" style="border:0; border-radius:20px;" allowfullscreen="" loading="lazy"></iframe>
+                    <form class="contact-form" id="contactForm">
+                        <input type="text" placeholder="الاسم الكامل" id="contactName" required>
+                        <input type="email" placeholder="البريد الإلكتروني" id="contactEmail" required>
+                        <textarea rows="4" placeholder="رسالتك..." id="contactMsg"></textarea>
+                        <button type="submit" class="btn-primary"><span data-lang="send">إرسال الرسالة</span></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 محمد IDLEB X - <span data-lang="rights">جميع الحقوق محفوظة</span></p>
+    </footer>
+
+    <canvas id="bgCanvas"></canvas>
+
+    <script src="script.js" type="module"></script>
+</body>
+</html>
