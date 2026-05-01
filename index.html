@@ -3,28 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>IDLEB X | محمد - مبرمج ومهندس أمن سيبراني احترافي</title>
+    <title>IDLEB X | CV</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- مكتبة QR Code -->
     <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
-    <!-- مكتبة AOS للتمرير -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body>
 
-    <!-- زر تبديل الوضع المظلم/المضيء -->
+    <!-- شاشة التحميل Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loader">
+            <div class="cyber-circle"></div>
+            <div class="cyber-circle2"></div>
+            <div class="loader-text">IDLEB X<span class="loader-dots">...</span></div>
+            <div class="loader-sub">Initializing Security Protocols</div>
+        </div>
+    </div>
+
+    <div id="mainContent" style="display: none;">
+
     <button class="theme-toggle" id="themeToggle">
         <i class="fas fa-moon"></i>
     </button>
 
-    <!-- زر تبديل اللغة -->
     <button class="lang-toggle" id="langToggle">
         <i class="fas fa-globe"></i> EN
     </button>
 
-    <!-- قائمة التنقل -->
     <nav>
         <div class="logo" data-lang="logo">IDLEB<span>X</span></div>
         <div class="nav-links">
@@ -32,6 +39,7 @@
             <a href="#about" data-lang="nav-about">عني</a>
             <a href="#skills" data-lang="nav-skills">مهاراتي</a>
             <a href="#projects" data-lang="nav-projects">مشاريعي</a>
+            <a href="#github" data-lang="nav-github">GitHub</a>
             <a href="#penetration" data-lang="nav-pen">اختبار الاختراق</a>
             <a href="#contact" data-lang="nav-contact">تواصل</a>
         </div>
@@ -40,10 +48,9 @@
         </div>
     </nav>
 
-    <!-- قسم الترحيب الرئيسي -->
     <section id="home" class="hero">
         <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
-            <div class="profile-image-container">
+            <div class="profile-image-container hologram-effect">
                 <img src="profile.jpg" alt="IDLEB X" class="profile-image" id="heroProfileImg">
             </div>
             <div class="glitch-text" data-text="IDLEB X">IDLEB X</div>
@@ -65,13 +72,12 @@
         </div>
     </section>
 
-    <!-- قسم عني مع بطاقة 3D -->
     <section id="about" class="about">
         <div class="container">
             <h2 class="section-title" data-aos="fade-up" data-lang="about-title">من أنا؟</h2>
             <div class="about-content">
                 <div class="about-text" data-aos="fade-right">
-                    <div class="profile-image-container about-profile">
+                    <div class="profile-image-container about-profile hologram-effect">
                         <img src="profile.jpg" alt="IDLEB X" class="profile-image">
                     </div>
                     <p><strong data-lang="about-name">أنا محمد، البالغ من العمر 19 عامًا، والمعروف في الأوساط التقنية بـ IDLEB X.</strong></p>
@@ -111,13 +117,12 @@
         </div>
     </section>
 
-    <!-- قسم المهارات -->
     <section id="skills" class="skills">
         <div class="container">
             <h2 class="section-title" data-aos="fade-up" data-lang="skills-title">مهاراتي الاحترافية</h2>
             <div class="skills-grid">
                 <div class="skill-card" data-aos="zoom-in">
-                    <div class="profile-image-small">
+                    <div class="profile-image-small hologram-effect-small">
                         <img src="profile.jpg" alt="IDLEB X">
                     </div>
                     <i class="fas fa-code"></i>
@@ -125,7 +130,7 @@
                     <p>Flutter, React, Laravel, Node.js</p>
                 </div>
                 <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="profile-image-small">
+                    <div class="profile-image-small hologram-effect-small">
                         <img src="profile.jpg" alt="IDLEB X">
                     </div>
                     <i class="fab fa-telegram"></i>
@@ -133,7 +138,7 @@
                     <p>Python, Telebot, Aiogram, APIs</p>
                 </div>
                 <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="profile-image-small">
+                    <div class="profile-image-small hologram-effect-small">
                         <img src="profile.jpg" alt="IDLEB X">
                     </div>
                     <i class="fas fa-shield-alt"></i>
@@ -141,7 +146,7 @@
                     <p>Python, Kali Linux, Metasploit</p>
                 </div>
                 <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="profile-image-small">
+                    <div class="profile-image-small hologram-effect-small">
                         <img src="profile.jpg" alt="IDLEB X">
                     </div>
                     <i class="fas fa-database"></i>
@@ -152,34 +157,34 @@
         </div>
     </section>
 
-    <!-- قسم المشاريع -->
     <section id="projects" class="projects">
         <div class="container">
             <h2 class="section-title" data-aos="fade-up" data-lang="projects-title">أبرز مشاريعي</h2>
-            <div class="projects-grid">
+            <div class="projects-grid" id="projectsGrid">
+                <!-- مشاريع ثابتة -->
                 <div class="project-card" data-aos="fade-up">
-                    <div class="profile-image-mini">
+                    <div class="profile-image-mini hologram-effect-small">
                         <img src="profile.jpg" alt="IDLEB X">
                     </div>
                     <h3>🚀 نظام إدارة مكاتب متكامل</h3>
                     <p>منصة ويب لإدارة الشركات والمكاتب مع لوحة تحكم ذكية</p>
                 </div>
                 <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="profile-image-mini">
+                    <div class="profile-image-mini hologram-effect-small">
                         <img src="profile.jpg" alt="IDLEB X">
                     </div>
                     <h3>🤖 بوت بيع تلقائي لتلجرام</h3>
                     <p>بوت يدير عمليات البيع والدفع والتحزيم بشكل أوتوماتيكي</p>
                 </div>
                 <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="profile-image-mini">
+                    <div class="profile-image-mini hologram-effect-small">
                         <img src="profile.jpg" alt="IDLEB X">
                     </div>
                     <h3>🔐 أداة فحص ثغرات أخلاقية</h3>
                     <p>أداة Python لفحص الثغرات الأمنية في المواقع بإطار قانوني</p>
                 </div>
                 <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="profile-image-mini">
+                    <div class="profile-image-mini hologram-effect-small">
                         <img src="profile.jpg" alt="IDLEB X">
                     </div>
                     <h3>📱 تطبيق إدارة المهام</h3>
@@ -189,12 +194,21 @@
         </div>
     </section>
 
-    <!-- قسم اختبار الاختراق التجريبي الاحترافي -->
+    <!-- قسم GitHub -->
+    <section id="github" class="github-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up" data-lang="github-title">📦 آخر مشاريعي على GitHub</h2>
+            <div class="github-grid" id="githubRepos">
+                <div class="github-loading">جاري تحميل المشاريع من GitHub...</div>
+            </div>
+        </div>
+    </section>
+
     <section id="penetration" class="penetration">
         <div class="container">
             <h2 class="section-title" data-aos="fade-up" data-lang="pen-title">🧪 مختبر اختبار الاختراق التجريبي</h2>
             <div class="pen-content" data-aos="fade-up">
-                <div class="profile-image-container pen-profile">
+                <div class="profile-image-container pen-profile hologram-effect">
                     <img src="profile.jpg" alt="IDLEB X" class="profile-image">
                 </div>
                 <p class="pen-intro" data-lang="pen-intro">هذا بيئة محاكاة احترافية لاختبار الاختراق الأخلاقي. جميع الأدوات والاختبارات آمنة وقانونية للعرض فقط.</p>
@@ -245,13 +259,12 @@
         </div>
     </section>
 
-    <!-- قسم التواصل مع خريطة -->
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title" data-aos="fade-up" data-lang="contact-title">تواصل معي</h2>
             <div class="contact-content">
                 <div class="contact-info" data-aos="fade-right">
-                    <div class="profile-image-container contact-profile">
+                    <div class="profile-image-container contact-profile hologram-effect">
                         <img src="profile.jpg" alt="IDLEB X" class="profile-image">
                     </div>
                     <h3>محمد "IDLEB X"</h3>
@@ -284,8 +297,9 @@
                         <input type="text" placeholder="الاسم الكامل" id="contactName" required>
                         <input type="email" placeholder="البريد الإلكتروني" id="contactEmail" required>
                         <textarea rows="4" placeholder="رسالتك..." id="contactMsg"></textarea>
-                        <button type="submit" class="btn-primary"><span data-lang="send">إرسال الرسالة</span></button>
+                        <button type="submit" class="btn-primary" id="submitContactBtn"><span data-lang="send">إرسال الرسالة</span></button>
                     </form>
+                    <div id="telegramNotification" style="display:none; color: green; margin-top: 10px; text-align: center;"></div>
                 </div>
             </div>
         </div>
@@ -297,6 +311,8 @@
 
     <canvas id="bgCanvas"></canvas>
 
+    </div> <!-- نهاية mainContent -->
+
     <script src="script.js" type="module"></script>
 </body>
-</html>
+                    </html>
