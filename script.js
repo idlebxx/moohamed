@@ -249,13 +249,13 @@ if (statsSection) observer.observe(statsSection);
 
 // ========== 5. زر تحميل PDF و QR Code ==========
 document.getElementById('downloadPDF').addEventListener('click', () => {
-    alert('ملف PDF سيرتك الذاتية - يمكنك استبدال هذا التنبيه برابط التحميل الفعلي');
+    alert('https://anytourl.com/s/81830688496704564');
     // window.open('cv.pdf', '_blank');
 });
 
 // إنشاء QR Code لبوت التلجرام
 new QRCode(document.getElementById('qrcode'), {
-    text: 'https://t.me/idlebxxx2',
+    text: 'https://t.me/band_idlebx_bot',
     width: 120,
     height: 120
 });
